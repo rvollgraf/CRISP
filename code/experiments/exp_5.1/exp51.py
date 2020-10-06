@@ -58,7 +58,7 @@ def init_contacts(S, T, qIbar=20.0, R0: Union[float, np.array] = 2.5, p1=0.01, d
         c = np.c_[c, np.full_like(c[:,0], t), np.ones_like(c[:,0])]
         return np.r_[c, c[:, [1, 0, 2, 3]]]
 
-    for t in trange(T):
+    for t in range(T):
 
         if t_mit is None or t<t_mit:
             p0 = R0[t] / qIbar / p1 / (S - 1)
